@@ -1,0 +1,2 @@
+class FastingTiming < ApplicationRecord
+end
