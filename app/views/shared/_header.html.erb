@@ -1,10 +1,20 @@
 <header class="mb-auto">
     <div>
-        <h3 class="float-md-start mb-0">Cover</h3>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home &emsp;</a> 
-            <a class="nav-link fw-bold py-1 px-0" href="#">list of Mosques &emsp;</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#">Contact &emsp;</a>
+        <h3 class="float-md-start mb-0" style="position: absolute; left: 15px;">Way to Masjid</h3>
+        <nav class="nav nav-masthead justify-content-center w-100">
+            <div class="nav-links text-center">
+            <a class="nav-link fw-bold nav-link-custom" aria-current="page" href="#">Home</a>
+            <a class="nav-link fw-bold nav-link-custom" href="#">List of Mosques</a>
+            <a class="nav-link fw-bold nav-link-custom" href="#">Contact</a>
+            </div>
+            <!-- Login/Logout Button to the right -->
+            <div class="nav-links ms-auto" style="position: absolute; right: 15px;">
+                <% if current_user %> 
+                    <%= button_to "Log Out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary fw-bold py-1 px-2" %>
+                <% else %>
+                   <%= button_to "Log In", new_user_session_path, class: "btn btn-primary fw-bold py-1 px-2" %>
+                <% end %>
+            </div>
         </nav>
     </div>
 </header>
