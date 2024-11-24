@@ -1,0 +1,25 @@
+<h1>You Are Admin of these following Mosques</h1>
+<table class="table table-light table-bordered" >
+  <thead>
+    <tr>
+      <th scope="col">Sr.no</th>
+      <th scope="col">Mosque Name</th>
+      <th scope="col">Mosque Adress</th>
+      <th scope="col">Area</th>
+      <th scope="col">User</th>
+      <th scope="col">Manage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@mosques.each_with_index do |mosque, index|%>
+        <tr>
+            <td><%=index+1%></td>
+            <td><%=mosque.name%></td>
+            <td><%=mosque.address%></td>
+            <td><%=mosque.area.area_name%></td>
+            <td><%=mosque.user.full_name%></td>
+            <td><%= link_to  "Edit", edit_mosque_path(mosque.id)%></td>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
