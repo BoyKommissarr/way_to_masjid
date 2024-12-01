@@ -5,6 +5,7 @@ class CreateMosques < ActiveRecord::Migration[7.2]
       t.string :address, null: false
       t.text :google_link
       t.references :area, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

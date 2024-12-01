@@ -14,11 +14,11 @@ ActiveRecord::Base.transaction do
     admin_3 = User.create!(email: 'kondhwa_budhrukadmin@gmai.com', password: 'password', full_name: "Baba Budhruk")
 
     puts ".........Inserting Masjids .........."
-    tooba = Mosque.create!(name: "tooba Masjid", address: "Parge Nagar", area_id: pg.id)
-    irc = Mosque.create!(name: "Islamic Research Center", address: "Parge Nagar", area_id: pg.id)
-    taalab = Mosque.create!(name: "Taalab Masjid", address: "Kondhwa Budhruk", area_id: kb.id)
-    kausar_baug = Mosque.create!(name: "Kausar Baug Masjid", address: "Kausar Baug", area_id: kb.id)
-    safaa = Mosque.create!(name: "Safaa Masjid", address: "Kondhwa Budhruk", area_id: kb.id)
+    tooba = Mosque.create!(name: "tooba Masjid", address: "Parge Nagar", area_id: pg.id, user_id: admin_1.id)
+    irc = Mosque.create!(name: "Islamic Research Center", address: "Parge Nagar", area_id: pg.id, user_id: admin_1.id)
+    taalab = Mosque.create!(name: "Taalab Masjid", address: "Kondhwa Budhruk", area_id: kb.id, user_id: admin_3.id)
+    kausar_baug = Mosque.create!(name: "Kausar Baug Masjid", address: "Kausar Baug", area_id: kb.id, user_id: admin_2.id)
+    safaa = Mosque.create!(name: "Safaa Masjid", address: "Kondhwa Budhruk", area_id: kb.id, user_id: admin_3.id)
 
 
     puts "........tooba masjid salah timing........."
