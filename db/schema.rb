@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_09_042104) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_23_045006) do
   create_table "areas", force: :cascade do |t|
     t.string "area_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["area_name"], name: "index_areas_on_area_name", unique: true
   end
 
   create_table "fasting_timings", force: :cascade do |t|
