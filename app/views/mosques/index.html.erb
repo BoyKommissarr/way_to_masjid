@@ -11,6 +11,7 @@
     </tr>
   </thead>
   <tbody>
+    <%= link_to "New", new_mosque_path %>
     <%@mosques.each_with_index do |mosque, index|%>
         <tr>
             <td><%=index+1%></td>
