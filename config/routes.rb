@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get "mosques" => "mosques#index", as: :mosques
 
   get "mosques/:id/edit" => "mosques#edit", as: :edit_mosque
+  patch "mosques/:id" => "mosques#update", as: :mosque
   # user routes [mooaz]
 end
