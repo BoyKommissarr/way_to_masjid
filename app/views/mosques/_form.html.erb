@@ -1,0 +1,32 @@
+<% if @mosque.new_record? %>
+  <h1>Add new masjid</h1>
+<% else %>
+  <h1>Edit masjid</h1>
+<% end %>
+
+<%= form_with(model: @mosque, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :area_id %>
+    <%#= form.collection_select :area_id, Area.all, :id, :area_name, prompt: "Choose Area" %>
+    <%= form.select :area_id, options_for_select(Area.all.map {|a| [a.area_name, a.id]}), prompt: "Select Area" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :google_link %>
+    <%= form.text_field :google_link %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

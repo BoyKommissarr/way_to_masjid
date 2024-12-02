@@ -14,8 +14,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "welcome#index"
 
-  get "mosques" => "mosques#index", as: :mosques
+  resources :mosques
 
-  get "mosques/:id/edit" => "mosques#edit", as: :edit_mosque
   # user routes [mooaz]
 end
