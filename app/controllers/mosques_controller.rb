@@ -3,19 +3,11 @@ class MosquesController < ApplicationController
   before_action :set_mosque, only: [ :edit, :update ]
 
   def index
-    if current_user.present?
       @mosques = Mosque.includes(:area, :user).where(user_id: current_user.id)
-    else
-     redirect_to new_user_session_path
-    end
   end
 
   def new
-    if current_user.present?
-      @mosque = Mosque.new
-    else
-      redirect_to new_user_session_path, alert: "Please login first to add a mosque."
-    end
+    @mosque = Mosque.new
   end
 
   def create
