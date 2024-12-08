@@ -61,3 +61,5 @@ group :test do
   gem "selenium-webdriver"
   gem "database_cleaner"
 end
+
+gem "factory_bot", "~> 6.5"
