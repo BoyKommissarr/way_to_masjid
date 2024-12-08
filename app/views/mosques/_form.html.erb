@@ -2,31 +2,37 @@
   <h1>Add new masjid</h1>
 <% else %>
   <h1>Edit masjid</h1>
-<% end %>
+<% end %><br>
 
 <%= form_with(model: @mosque, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label :name, "Name of MASJID", class: "form-label fw-bold fst-italic" %>
+    <%= form.text_field :name, class: "form-control" %> 
   </div>
+  
+  <br>
+
+  <div class="mb-3">
+    <%= form.label :address, "Address", class: "form-label fw-bold fst-italic" %>
+    <%= form.text_area :address, class: "form-control" %>
+  </div>
+  
+  <br>
+    
+  <div class="mb-3">
+    <%= form.label :area, "Area", class: "form-label fw-bold fst-italic" %>
+    <%= form.select :area_id, options_for_select(Area.all.map {|a| [a.area_name, a.id]}), {prompt: "Select Area"},class:"form-select" %>
+ </div>
+ 
+ <br>
 
   <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.label :google_link, "Google link", class: "form-label fw-bold fst-italic" %>
+    <%= form.text_area :google_link, class: "form-control" %>
   </div>
+  
+  <br>
 
-  <div class="field">
-    <%= form.label :area_id %>
-    <%#= form.collection_select :area_id, Area.all, :id, :area_name, prompt: "Choose Area" %>
-    <%= form.select :area_id, options_for_select(Area.all.map {|a| [a.area_name, a.id]}), prompt: "Select Area" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :google_link %>
-    <%= form.text_field :google_link %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit nil,class: "btn btn-primary fw-bold fst-italic" %>
+  
 <% end %>
