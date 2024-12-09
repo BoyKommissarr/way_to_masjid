@@ -38,6 +38,6 @@ class MosquesController < ApplicationController
   end
 
   def mosque_params
-    params.require(:mosque).permit(:name, :address, :area_id, :user_id, :google_link)
+    params.require(:mosque).permit(:name, :address, :area_id, :user_id, :google_link, salah_timings_attributes: [ :id, :name, :timing ])
   end
 end

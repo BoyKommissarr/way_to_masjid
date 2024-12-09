@@ -33,6 +33,25 @@
   
   <br>
 
+
+  <div class="mb-3">
+    <h2>Salah Timings</h2>
+    <%= form.fields_for :salah_timings do |t| %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= t.label :name, "Salah Name", class: "form-label fw-bold fst-italic" %>
+          <%= t.text_field :name, class: "form-control", placeholder: "e.g., Fajr" %>
+        </div>
+        <div class="col-md-6">
+          <%= t.label :timing, "Timing", class: "form-label fw-bold fst-italic" %>
+          <%= t.time_field :timing, class: "form-control" %>
+        </div>
+      </div>
+      <%= t.hidden_field :id %>
+      <br>
+    <% end %>
+  </div>
+
   <%= form.submit nil,class: "btn btn-primary fw-bold fst-italic" %>
-  
+
 <% end %>
