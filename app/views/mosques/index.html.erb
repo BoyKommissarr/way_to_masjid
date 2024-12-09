@@ -7,6 +7,7 @@
       <th scope="col">Mosque Adress</th>
       <th scope="col">Area</th>
       <th scope="col">User</th>
+      <th scope="col">Details</th>
       <th scope="col">Manage</th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
             <td><%=mosque.address%></td>
             <td><%=mosque.area.area_name%></td>
             <td><%=mosque.user.full_name%></td>
+            <td><%= link_to "Salah Timings", mosque_path(mosque.id)  %></td>
             <td><%= link_to  "Edit", edit_mosque_path(mosque.id)%></td>
         </tr>
     <%end%>

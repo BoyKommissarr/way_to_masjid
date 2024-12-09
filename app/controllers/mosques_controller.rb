@@ -1,6 +1,6 @@
 class MosquesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_mosque, only: [ :edit, :update ]
+  before_action :set_mosque, only: [ :edit, :update, :show ]
 
   def index
       @mosques = Mosque.includes(:area, :user).where(user_id: current_user.id)
@@ -29,6 +29,8 @@ class MosquesController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def show; end
 
 
   private
