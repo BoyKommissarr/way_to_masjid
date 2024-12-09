@@ -49,6 +49,7 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
   gem "rspec-rails", "~> 7.0.0"
+  gem "factory_bot_rails"
 
   # create fake data
   gem "faker"
@@ -65,5 +66,3 @@ group :test do
   gem "selenium-webdriver"
   gem "database_cleaner"
 end
-
-gem "factory_bot", "~> 6.5"
