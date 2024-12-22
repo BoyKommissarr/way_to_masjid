@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "welcome#index"
 
-  resources :mosques
+  resources :mosques do
+    collection do
+      get "search"
+    end
+  end
 
   # user routes [mooaz]
 end

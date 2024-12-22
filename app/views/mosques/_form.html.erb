@@ -21,7 +21,7 @@
     
   <div class="mb-3">
     <%= form.label :area, "Area", class: "form-label fw-bold fst-italic" %>
-    <%= form.select :area_id, options_for_select(Area.all.map {|a| [a.area_name, a.id]}), {prompt: "Select Area"},class:"form-select" %>
+    <%= form.select :area_id, options_for_select(Area.all.map {|a| [a.area_name, a.id]}, @mosque.area_id), {prompt: "Select Area"},class:"form-select" %>
  </div>
  
  <br>

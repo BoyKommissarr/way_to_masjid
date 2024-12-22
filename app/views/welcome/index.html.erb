@@ -4,7 +4,11 @@
     <h1> Assalam-o-Alaikum .</h1>
     <p class="lead"> Welcome to the "Way to masjid" App here we can guide you to the nearest masjid and its salah timing.</p>
     <p class="lead">
-    <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Add Mosques</a>
+    <%if current_user%>
+        <a href="/mosques/new" class="btn btn-lg btn-light fw-bold border-white bg-white">Add Mosques</a>
+    <%else%>
+        <a href="/mosques/search" class="btn btn-lg btn-light fw-bold border-white bg-white">Search Mosque</a>
+    <%end%>
     </p>
 </main>
 

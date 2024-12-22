@@ -1,0 +1,31 @@
+<h1>Viewing Mosuqe</h1>
+<%= form_with url: "/mosques/search", method: :get do |form| %>
+  <%= form.label :query, "Search for:" %>
+  <%= form.select :query, options_for_select(Area.all.map {|a| [a.area_name, a.id]}, params[:query]), {prompt: "Select Area"},class:"form-select" %>
+  <%= form.submit "Search" %>
+<% end %>
+
+
+<table class="table table-light table-bordered" >
+  <thead>
+    <tr>
+      <th scope="col">Sr.no</th>
+      <th scope="col">Mosque Name</th>
+      <th scope="col">Mosque Adress</th>
+      <th scope="col">Area</th>
+      <th scope="col">Google Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= link_to "New", new_mosque_path %>
+    <%@mosques.each_with_index do |mosque, index|%>
+        <tr>
+            <td><%=index+1%></td>
+            <td><%=mosque.name%></td>
+            <td><%=mosque.address%></td>
+            <td><%=mosque.area.area_name%></td>
+            <td><a href = "<%=mosque.google_link%>">Google Link</a></td>
+        </tr>
+    <%end%>
+  </tbody>
+</table>

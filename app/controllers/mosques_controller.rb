@@ -1,9 +1,9 @@
 class MosquesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:search]
   before_action :set_mosque, only: [ :edit, :update ]
 
   def index
-      @mosques = Mosque.includes(:area, :user).where(user_id: current_user.id)
+    @mosques = Mosque.includes(:area, :user).where(user_id: current_user.id)
   end
 
   def new
@@ -22,6 +22,7 @@ class MosquesController < ApplicationController
 
   def edit
   end
+
   def update
     if @mosque.update(mosque_params)
       redirect_to mosques_path, notice: "Masjid updated successfully."
@@ -30,6 +31,9 @@ class MosquesController < ApplicationController
     end
   end
 
+  def search
+    @mosques = Mosque.where(area_id: params[:query])
+  end
 
   private
 
