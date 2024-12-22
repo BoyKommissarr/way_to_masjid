@@ -12,8 +12,8 @@
       <th scope="col">Sr.no</th>
       <th scope="col">Mosque Name</th>
       <th scope="col">Mosque Adress</th>
-      <th scope="col">Area</th>
       <th scope="col">Google Link</th>
+      <th scope="col">Salah Timings</th>
     </tr>
   </thead>
   <tbody>
@@ -23,8 +23,8 @@
             <td><%=index+1%></td>
             <td><%=mosque.name%></td>
             <td><%=mosque.address%></td>
-            <td><%=mosque.area.area_name%></td>
             <td><a href = "<%=mosque.google_link%>">Google Link</a></td>
+            <td><%=mosque.next_salah_time %></td>
         </tr>
     <%end%>
   </tbody>
