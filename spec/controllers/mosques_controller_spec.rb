@@ -33,4 +33,30 @@ RSpec.describe MosquesController, type: :controller do
       end
     end
   end
+
+  context 'with edit page' do
+    it 'renders edit page' do
+      sign_in(user)
+
+      area = create(:area, area_name: 'Kausar Bagh')
+      mosque = create(:mosque, name: 'Kausar Bagh Masjid', area:)
+
+      get :edit, params: { id: mosque.id }
+      expect(response).to have_http_status(:ok)
+      expect(response).to render_template('edit')
+    end
+  end
+
+  context 'with update page' do
+    it 'successful patch request' do
+      sign_in(user)
+
+      area = create(:area, area_name: 'Kausar Bagh')
+      mosque = create(:mosque, name: 'Kausar Bagh Masjid', area:)
+
+      patch :update, params: { id: mosque.id, mosque: { address: 'Kondhwa Budhruk' }}
+      expect(response).to have_http_status(:redirect)
+      expect(mosque.reload.address).to eq('Kondhwa Budhruk')
+    end
+  end
 end
