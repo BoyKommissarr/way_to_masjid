@@ -54,7 +54,7 @@ RSpec.describe MosquesController, type: :controller do
       area = create(:area, area_name: 'Kausar Bagh')
       mosque = create(:mosque, name: 'Kausar Bagh Masjid', area:)
 
-      patch :update, params: { id: mosque.id, mosque: { address: 'Kondhwa Budhruk' }}
+      patch :update, params: { id: mosque.id, mosque: { address: 'Kondhwa Budhruk' } }
       expect(response).to have_http_status(:redirect)
       expect(mosque.reload.address).to eq('Kondhwa Budhruk')
     end
