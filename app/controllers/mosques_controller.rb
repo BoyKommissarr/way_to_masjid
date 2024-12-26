@@ -1,5 +1,5 @@
 class MosquesController < ApplicationController
-  before_action :authenticate_user!, except: [ :search ]
+  before_action :authenticate_user!, except: [ :search, :show ]
   before_action :set_mosque, only: [ :edit, :update, :show ]
 
   def index

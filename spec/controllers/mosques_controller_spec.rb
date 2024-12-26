@@ -7,7 +7,19 @@ RSpec.describe MosquesController, type: :controller do
       get :index
 
       expect(response).to render_template('index')
-      expect(assigns(:mosques).length).to eq(Mosque.all.length)
+      expect(assigns(:mosques).length).to eq(user.mosques.length)
+    end
+  end
+
+  context "show" do
+    it 'displays show page' do
+      area = create(:area)
+      mosque = create(:mosque, area:, user:)
+
+      get :show, params: { id: mosque.id }
+
+      expect(response).to have_http_status(:ok)
+      expect(response).to render_template('show')
     end
   end
 
