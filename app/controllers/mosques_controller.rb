@@ -1,6 +1,6 @@
 class MosquesController < ApplicationController
   before_action :authenticate_user!, except: [ :search ]
-  before_action :set_mosque, only: [ :edit, :update ]
+  before_action :set_mosque, only: [ :edit, :update, :show ]
 
   def index
     @mosques = Mosque.includes(:area, :user).where(user_id: current_user.id)
@@ -34,6 +34,8 @@ class MosquesController < ApplicationController
   def search
     @mosques = Mosque.where(area_id: params[:query])
   end
+
+  def show; end
 
   private
 
