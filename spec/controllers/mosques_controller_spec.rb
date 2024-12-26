@@ -14,7 +14,7 @@ RSpec.describe MosquesController, type: :controller do
   context "show" do
     it 'displays show page' do
       area = create(:area)
-      mosque = create(:mosque,area:,user:)
+      mosque = create(:mosque, area:, user:)
 
       get :show, params: { id: mosque.id }
 
