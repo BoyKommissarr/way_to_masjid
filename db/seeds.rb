@@ -22,41 +22,41 @@ ActiveRecord::Base.transaction do
 
 
     puts "........tooba masjid salah timing........."
-    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "10"), mosque_id: tooba.id)
-    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "01", "30"), mosque_id: tooba.id)
-    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "04", "30"), mosque_id: tooba.id)
-    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "06", "05"), mosque_id: tooba.id)
-    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "08", "15"), mosque_id: tooba.id)
+    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "10", "00", "+0530"), mosque_id: tooba.id)
+    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "13", "30", "00", "+0530"), mosque_id: tooba.id)
+    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "16", "30", "00", "+0530"), mosque_id: tooba.id)
+    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "18", "05", "00", "+0530"), mosque_id: tooba.id)
+    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "20", "15", "00", "+0530"), mosque_id: tooba.id)
 
     puts "........tooba irc salah timing........."
 
-    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "15"), mosque_id: irc.id)
-    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "01", "15"), mosque_id: irc.id)
-    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "04", "45"), mosque_id: irc.id)
-    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "06", "05"), mosque_id: irc.id)
-    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "08", "15"), mosque_id: irc.id)
+    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "15", "00", "+0530"), mosque_id: irc.id)
+    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "13", "15", "00", "+0530"), mosque_id: irc.id)
+    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "16", "45", "00", "+0530"), mosque_id: irc.id)
+    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "18", "05", "00", "+0530"), mosque_id: irc.id)
+    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "20", "15", "00", "+0530"), mosque_id: irc.id)
 
     puts "........tooba talaab salah timing........."
 
-    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "15"), mosque_id: taalab.id)
-    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "01", "15"), mosque_id: taalab.id)
-    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "04", "45"), mosque_id: taalab.id)
-    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "06", "05"), mosque_id: taalab.id)
-    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "08", "15"), mosque_id: taalab.id)
+    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "15", "00", "+0530"), mosque_id: taalab.id)
+    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "13", "15", "00", "+0530"), mosque_id: taalab.id)
+    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "16", "45", "00", "+0530"), mosque_id: taalab.id)
+    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "18", "05", "00", "+0530"), mosque_id: taalab.id)
+    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "20", "15", "00", "+0530"), mosque_id: taalab.id)
 
     puts "........tooba kausar baug salah timing........."
 
-    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "15"), mosque_id: kausar_baug.id)
-    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "01", "15"), mosque_id: kausar_baug.id)
-    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "04", "45"), mosque_id: kausar_baug.id)
-    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "06", "05"), mosque_id: kausar_baug.id)
-    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "08", "15"), mosque_id: kausar_baug.id)
+    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "15", "00", "+0530"), mosque_id: kausar_baug.id)
+    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "13", "15", "00", "+0530"), mosque_id: kausar_baug.id)
+    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "16", "45", "00", "+0530"), mosque_id: kausar_baug.id)
+    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "18", "05", "00", "+0530"), mosque_id: kausar_baug.id)
+    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "20", "15", "00", "+0530"), mosque_id: kausar_baug.id)
 
     puts "........tooba safaa salah timing........."
 
-    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "15"), mosque_id: safaa.id)
-    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "01", "15"), mosque_id: safaa.id)
-    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "04", "45"), mosque_id: safaa.id)
-    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "06", "05"), mosque_id: safaa.id)
-    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "08", "15"), mosque_id: safaa.id)
+    SalahTiming.create!(name: "Fajar", timing: Time.new("01", "01", "01", "06", "15", "00", "+0530"), mosque_id: safaa.id)
+    SalahTiming.create!(name: "Zohar", timing: Time.new("01", "01", "01", "13", "15", "00", "+0530"), mosque_id: safaa.id)
+    SalahTiming.create!(name: "Asar", timing: Time.new("01", "01", "01", "16", "45", "00", "+0530"), mosque_id: safaa.id)
+    SalahTiming.create!(name: "Maghrib", timing: Time.new("01", "01", "01", "18", "05", "00", "+0530"), mosque_id: safaa.id)
+    SalahTiming.create!(name: "Isha", timing: Time.new("01", "01", "01", "20", "15", "00", "+0530"), mosque_id: safaa.id)
 end

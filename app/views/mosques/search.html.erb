@@ -13,7 +13,7 @@
       <th scope="col">Mosque Name</th>
       <th scope="col">Mosque Adress</th>
       <th scope="col">Google Link</th>
-      <th scope="col">Salah Timings</th>
+      <th scope="col">Upcoming Namaaz</th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +24,9 @@
             <td><%=mosque.name%></td>
             <td><%=mosque.address%></td>
             <td><a href = "<%=mosque.google_link%>">Google Link</a></td>
-            <td><%=mosque.next_salah_time %></td>
+            <td><%=mosque.next_salah_time.timing.in_time_zone('Asia/Kolkata').strftime("%I:%M %P")%>
+            - <b><%=mosque.next_salah_time.name%><b>
+            </td>
         </tr>
     <%end%>
   </tbody>
