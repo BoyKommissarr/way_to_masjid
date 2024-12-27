@@ -1,6 +1,6 @@
 class Mosque < ApplicationRecord
   belongs_to :area
-  has_many :salah_timings
+  has_many :salah_timings, dependent: :destroy
   belongs_to :user
 
   def next_salah_time
