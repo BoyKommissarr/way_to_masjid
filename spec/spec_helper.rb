@@ -92,4 +92,8 @@ config.filter_run_when_matching :focus
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  # TODO Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
+  config.before(:each, type: :controller) do
+    Rails.application.reload_routes_unless_loaded
+  end
 end
