@@ -1,17 +1,18 @@
-<h1>  Salah Timings  </h1>
+<h1>Namaz Timings</h1>
 <table class="table table-light table-bordered" >
   <thead>
     <tr>      
-      <th scope="col"> Salah Name </th>
-      <th scope="col"> Timing </th>
+      <th scope="col"> Namaz </th>
+      <th scope="col"> Timings </th>
     </tr>
   </thead>
   <tbody>
     <% @mosque.salah_timings.each do |t| %>
       <tr>
         <td> <%= t.name %> </td>
-        <td> <%= t.timing_now.strftime("%I:%M %P") %> </td>
+        <td> <%= t.timing.strftime("%I:%M %P") %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to 'Back', :back %>

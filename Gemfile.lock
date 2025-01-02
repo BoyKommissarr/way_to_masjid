@@ -154,6 +154,9 @@ GEM
     language_server-protocol (3.17.0.3)
     logger (1.6.4)
     loofah (2.24.0)
+    local_time (3.0.2)
+    logger (1.6.1)
+    loofah (2.23.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -392,6 +395,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal (~> 2.4)
+  local_time (~> 3.0)
   puma (>= 5.0)
   rails (~> 8.0.1)
   rails-controller-testing
