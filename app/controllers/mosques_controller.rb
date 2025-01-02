@@ -1,6 +1,6 @@
 class MosquesController < ApplicationController
   before_action :authenticate_user!, except: [ :search, :show ]
-  before_action :set_mosque, only: [ :edit, :update, :show ]
+  before_action :set_mosque, only: [ :edit, :update, :show, :destroy ]
 
   def index
     @mosques = Mosque.includes(:area, :user).where(user_id: current_user.id)
@@ -30,6 +30,12 @@ class MosquesController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @mosque.destroy
+    redirect_to mosques_path, notice: "Masjid details deleted."
+  end
+
 
   def search
     @mosques = Mosque.where(area_id: params[:query])

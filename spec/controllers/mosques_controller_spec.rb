@@ -69,6 +69,20 @@ RSpec.describe MosquesController, type: :controller do
       patch :update, params: { id: mosque.id, mosque: { address: 'Kondhwa Budhruk' } }
       expect(response).to have_http_status(:redirect)
       expect(mosque.reload.address).to eq('Kondhwa Budhruk')
+      expect(flash[:notice]).to eq("Masjid updated successfully.")
+    end
+  end
+
+  context 'delete mosque data' do
+    it 'deletes mosque data' do
+      sign_in(user)
+      area = create(:area, area_name: 'Kauser Bagh')
+      mosque = create(:mosque, name: "Kauser Bagh Masjid", area:)
+
+      delete :destroy, params: { id: mosque.id }
+
+      expect(response).to have_http_status(:redirect)
+      expect(flash[:notice]).to eq("Masjid details deleted.")
     end
   end
 end

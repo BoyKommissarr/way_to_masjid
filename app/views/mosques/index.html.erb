@@ -4,11 +4,12 @@
     <tr>
       <th scope="col">Sr.no</th>
       <th scope="col">Mosque Name</th>
-      <th scope="col">Mosque Adress</th>
+      <th scope="col">Mosque Adress</th> 
       <th scope="col">Area</th>
       <th scope="col">User</th>
       <th scope="col">Details</th>
       <th scope="col">Manage</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,7 @@
             <td><%=mosque.user.full_name%></td>
             <td><%= link_to "Salah Timings", mosque_path(mosque.id)  %></td>
             <td><%= link_to  "Edit", edit_mosque_path(mosque.id)%></td>
+            <td><%= link_to "DELETE", mosque_path(mosque.id),data:{turbo_method: :delete,turbo_confirm: "Are you sure?"} %> </td>
         </tr>
     <%end%>
   </tbody>
