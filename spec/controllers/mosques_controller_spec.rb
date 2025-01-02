@@ -69,6 +69,7 @@ RSpec.describe MosquesController, type: :controller do
       patch :update, params: { id: mosque.id, mosque: { address: 'Kondhwa Budhruk' } }
       expect(response).to have_http_status(:redirect)
       expect(mosque.reload.address).to eq('Kondhwa Budhruk')
+      expect(flash[:notice]).to eq("Masjid updated successfully.")
     end
   end
 
@@ -81,6 +82,7 @@ RSpec.describe MosquesController, type: :controller do
       delete :destroy, params: { id: mosque.id }
 
       expect(response).to have_http_status(:redirect)
+      expect(flash[:notice]).to eq("Masjid details deleted.")
     end
   end
 end
