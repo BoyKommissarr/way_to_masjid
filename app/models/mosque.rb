@@ -4,6 +4,11 @@ class Mosque < ApplicationRecord
   belongs_to :user
 
   def next_salah_time
-    salah_timings.second
+    current_time = Time.now.utc.strftime("%H:%M")
+    if current_time > salah_timings.last.timing.strftime("%H:%M")
+      salah_timings.first
+    else
+      salah_timings.find { |st| st.timing.strftime("%H:%M") > current_time }
+    end
   end
 end

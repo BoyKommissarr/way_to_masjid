@@ -1,4 +1,4 @@
-<h1>Viewing Mosuqe</h1>
+<h1>Search Masjids</h1>
 <%= form_with url: "/mosques/search", method: :get do |form| %>
   <%= form.label :query, "Search for:" %>
   <%= form.select :query, options_for_select(Area.all.map {|a| [a.area_name, a.id]}, params[:query]), {prompt: "Select Area"},class:"form-select" %>
@@ -13,7 +13,7 @@
       <th scope="col">Mosque Name</th>
       <th scope="col">Mosque Adress</th>
       <th scope="col">Google Link</th>
-      <th scope="col">Salah Timings</th>
+      <th scope="col">Upcoming Namaaz</th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +24,9 @@
             <td><%=mosque.name%></td>
             <td><%=mosque.address%></td>
             <td><a href = "<%=mosque.google_link%>">Google Link</a></td>
-            <td><%=mosque.next_salah_time %></td>
+            <td><%= local_time(mosque.next_salah_time.timing, "%I:%M %P")%>
+            - <b><%=mosque.next_salah_time.name%><b>
+            </td>
         </tr>
     <%end%>
   </tbody>

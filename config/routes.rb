@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :mosques do
+    resources :salah_timings
     collection do
       get "search"
     end

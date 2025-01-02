@@ -69,3 +69,4 @@ group :test do
 end
 
 gem "kamal", "~> 2.4"
+gem "local_time", "~> 3.0"
