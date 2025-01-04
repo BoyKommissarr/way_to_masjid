@@ -5,7 +5,7 @@ class SalahTimingsController < ApplicationController
     @mosque = Mosque.find(params[:mosque_id])
     @salah_timing = SalahTiming.new
   end
-  
+
   def create
     @mosque = Mosque.find(params[:mosque_id])
     @salah_timing = SalahTiming.new(salah_timing_params)
@@ -16,7 +16,7 @@ class SalahTimingsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
     def edit
     @mosque = Mosque.find(params[:mosque_id])
     @salah_timing = SalahTiming.find(params[:id])
