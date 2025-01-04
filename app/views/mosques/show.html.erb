@@ -1,9 +1,11 @@
-<h1>Namaz Timings</h1>
+<h1>Namaz Timings of <%=@mosque.name%> </h1> 
+ <%= link_to "Add NEW SALAH", "/mosques/#{@mosque.id}/salah_timings/new" %><br/>
 <table class="table table-light table-bordered" >
   <thead>
     <tr>      
       <th scope="col"> Namaz </th>
       <th scope="col"> Timings </th>
+      <th scope="col"> Action </th>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +13,7 @@
       <tr>
         <td> <%= t.name %> </td>
         <td> <%= t.timing.strftime("%I:%M %P") %> </td>
+        <td> <%= link_to "EDIT",edit_mosque_salah_timing_path(@mosque.id, t.id) %> </td>
       </tr>
     <% end %>
   </tbody>
