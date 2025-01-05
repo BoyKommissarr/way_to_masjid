@@ -1,24 +1,22 @@
 class SalahTimingsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_mosque
 
   def new
-    @mosque = Mosque.find(params[:mosque_id])
     @salah_timing = SalahTiming.new
   end
 
   def create
-    @mosque = Mosque.find(params[:mosque_id])
     @salah_timing = SalahTiming.new(salah_timing_params)
     @salah_timing.mosque_id = @mosque.id
     if @salah_timing.save
-      redirect_to mosque_path(@mosque.id), notice: "salah added successfully."
+      redirect_to mosque_path(@mosque.id), notice: "Namaz timings added successfully."
     else
       render :new, status: :unprocessable_entity
     end
   end
 
     def edit
-    @mosque = Mosque.find(params[:mosque_id])
     @salah_timing = SalahTiming.find(params[:id])
   end
 
@@ -26,7 +24,7 @@ class SalahTimingsController < ApplicationController
     @salah_timing = SalahTiming.find(params[:id])
 
     if @salah_timing.update(salah_timing_params)
-      redirect_to mosques_path, notice: "Timings updated successfully."
+      redirect_to mosque_path(@mosque.id), notice: "Namaz Timings updated successfully."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,5 +34,9 @@ class SalahTimingsController < ApplicationController
 
   def salah_timing_params
     params.require(:salah_timing).permit(:name, :timing)
+  end
+
+  def find_mosque
+    @mosque = Mosque.find(params[:mosque_id])
   end
 end
