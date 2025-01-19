@@ -34,6 +34,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_18_021316) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "pending"
     t.index ["area_id"], name: "index_mosques_on_area_id"
     t.index ["user_id"], name: "index_mosques_on_user_id"
   end

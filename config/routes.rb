@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resources :salah_timings
     collection do
       get "search"
+      get "suggest", controller: "welcome", action: :suggest
+      post "suggest", controller: "welcome", action: :create
     end
   end
 

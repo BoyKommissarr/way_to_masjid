@@ -1,0 +1,45 @@
+<h3>Suggest a new mosque</h3>
+<br><hr><br>
+<%= form_with(model: @mosque, local: true, url: "/mosques/suggest") do |form| %>
+  <% if @mosque.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@mosque.errors.count, "error") %> prohibited this  from being saved:</h2>
+
+      <ul>
+        <% @mosque.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :name, "Name of MASJID", class: "form-label fw-bold fst-italic" %>
+    <%= form.text_field :name, class: "form-control" %> 
+  </div>
+  
+  <br>
+
+  <div class="mb-3">
+    <%= form.label :address, "Address", class: "form-label fw-bold fst-italic" %>
+    <%= form.text_area :address, class: "form-control" %>
+  </div>
+  
+  <br>
+    
+  <div class="mb-3">
+    <%= form.label :area, "Area", class: "form-label fw-bold fst-italic" %>
+    <%= form.select :area_id, options_for_select(Area.all.map {|a| [a.area_name, a.id]}, @mosque.area_id), {prompt: "Select Area"},class:"form-select" %>
+ </div>
+ 
+ <br>
+
+  <div class="field">
+    <%= form.label :google_link, "Google link", class: "form-label fw-bold fst-italic" %>
+    <%= form.text_area :google_link, class: "form-control" %>
+  </div>
+  
+  <br>
+
+  <%= form.submit 'Submit',class: "btn btn-primary fw-bold fst-italic" %>
+  
+<% end %>

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  SUPER_ADMIN_EMAIL = "ntsuperadmin@namaztime.com".freeze
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,6 +12,10 @@ class User < ApplicationRecord
   ADMIN = "admin".freeze
 
   enum :role, admin: ADMIN, muazzin: MUAZZIN
+  def self.super_admin
+    User.find_by(email: SUPER_ADMIN_EMAIL)
+  end
+
   private
 
   def set_default_time_zone
