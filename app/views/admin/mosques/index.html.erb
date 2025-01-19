@@ -1,0 +1,22 @@
+<h1>All Masjids</h1>
+<table class="table table-light table-bordered" >
+  <thead>
+    <tr>
+      <th>Sr.no</th>
+      <th>Name</th>
+      <th>Address</th> 
+      <th colspan="2">Manage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@mosques.each_with_index do |mosque, index|%>
+      <tr>
+        <td><%=index+1%></td>
+        <td><%=mosque.name%></td>
+        <td><%=mosque.address%></td>
+        <td><%= link_to "Approve", ""  %></td>
+        <td><%= link_to "Reject", "" %> </td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

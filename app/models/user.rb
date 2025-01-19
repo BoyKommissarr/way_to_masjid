@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   after_initialize :set_default_time_zone, if: :new_record?
 
+  MUAZZIN = "muazzin".freeze
+  ADMIN = "admin".freeze
+
+  enum :role, admin: ADMIN, muazzin: MUAZZIN
   private
 
   def set_default_time_zone
