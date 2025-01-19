@@ -13,6 +13,7 @@ class MosquesController < ApplicationController
   def create
     @mosque = Mosque.new(mosque_params)
     @mosque.user_id = current_user.id # logged-in user
+    @mosque.status = Mosque::APPROVED
     if @mosque.save
       redirect_to mosques_path, notice: "Masjid added successfully."
     else

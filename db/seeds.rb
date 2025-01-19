@@ -1,5 +1,8 @@
 # Inserting records for masjids
 ActiveRecord::Base.transaction do
+    puts ".......Inserting Super Admins........."
+    super_admin1 = User.create!(email: User::SUPER_ADMIN_EMAIL, password: 'password', full_name: "Super Admin")
+
     puts ".........Inserting Areas .........."
 
     kb = Area.create!(area_name: "Kondhwa Budhruk") # For single record insertion
@@ -14,11 +17,11 @@ ActiveRecord::Base.transaction do
     admin_3 = User.create!(email: 'kondhwa_budhrukadmin@gmai.com', password: 'password', full_name: "Baba Budhruk")
 
     puts ".........Inserting Masjids .........."
-    tooba = Mosque.create!(name: "tooba Masjid", address: "Parge Nagar", area_id: pg.id, user_id: admin_1.id)
-    irc = Mosque.create!(name: "Islamic Research Center", address: "Parge Nagar", area_id: pg.id, user_id: admin_1.id)
-    taalab = Mosque.create!(name: "Taalab Masjid", address: "Kondhwa Budhruk", area_id: kb.id, user_id: admin_3.id)
-    kausar_baug = Mosque.create!(name: "Kausar Baug Masjid", address: "Kausar Baug", area_id: kb.id, user_id: admin_2.id)
-    safaa = Mosque.create!(name: "Safaa Masjid", address: "Kondhwa Budhruk", area_id: kb.id, user_id: admin_3.id)
+    tooba = Mosque.create!(name: "tooba Masjid", address: "Parge Nagar", area_id: pg.id, user_id: admin_1.id, status: :approved)
+    irc = Mosque.create!(name: "Islamic Research Center", address: "Parge Nagar", area_id: pg.id, user_id: admin_1.id, status: :approved)
+    taalab = Mosque.create!(name: "Taalab Masjid", address: "Kondhwa Budhruk", area_id: kb.id, user_id: admin_3.id, status: :approved)
+    kausar_baug = Mosque.create!(name: "Kausar Baug Masjid", address: "Kausar Baug", area_id: kb.id, user_id: admin_2.id, status: :approved)
+    safaa = Mosque.create!(name: "Safaa Masjid", address: "Kondhwa Budhruk", area_id: kb.id, user_id: admin_3.id, status: :approved)
 
 
     puts "........tooba masjid salah timing........."
