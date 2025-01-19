@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "welcome#index"
 
+  namespace :admin do
+    resources :mosques, only: :index
+  end
+
   resources :mosques do
     resources :salah_timings
     collection do

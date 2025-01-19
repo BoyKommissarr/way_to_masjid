@@ -70,3 +70,7 @@ end
 
 gem "kamal", "~> 2.4"
 gem "local_time", "~> 3.0"
+
+gem "strong_migrations", "~> 2.1"
+
+gem "cancancan", "~> 3.6"
