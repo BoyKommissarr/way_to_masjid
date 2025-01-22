@@ -1,6 +1,5 @@
 # Inserting records for masjids
 ActiveRecord::Base.transaction do
-
     super_admin1 = User.create!(email: User::SUPER_ADMIN_EMAIL, password: 'password', full_name: "Super Admin", role: User::ADMIN)
 
     puts "...........Inserting Admins.............."
