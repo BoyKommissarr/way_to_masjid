@@ -1,20 +1,19 @@
 # Inserting records for masjids
 ActiveRecord::Base.transaction do
-    puts ".......Inserting Super Admins........."
-    super_admin1 = User.create!(email: User::SUPER_ADMIN_EMAIL, password: 'password', full_name: "Super Admin")
+
+    super_admin1 = User.create!(email: User::SUPER_ADMIN_EMAIL, password: 'password', full_name: "Super Admin", role: User::ADMIN)
+
+    puts "...........Inserting Admins.............."
+    admin_1 = User.create!(email: 'parge_admin@gmail.com', password: 'password', full_name: "Bismillah Khan", role: User::MUAZZIN)
+    admin_2 = User.create!(email: 'kausar_admin@gmail.com', password: 'password', full_name: "Kausar Miyan", role: User::MUAZZIN)
+    admin_3 = User.create!(email: 'kondhwa_budhrukadmin@gmai.com', password: 'password', full_name: "Baba Budhruk", role: User::MUAZZIN)
 
     puts ".........Inserting Areas .........."
-
     kb = Area.create!(area_name: "Kondhwa Budhruk") # For single record insertion
     kk = Area.create!(area_name: "Kondhwa Khurd")
     pg = Area.create!(area_name: "Parge Nagar")
     kausar = Area.create!(area_name: "Kausar Baug")
     nibm = Area.create!(area_name: "NIBM")
-
-    puts "...........Inserting Admins.............."
-    admin_1 = User.create!(email: 'parge_admin@gmail.com', password: 'password', full_name: "Bismillah Khan")
-    admin_2 = User.create!(email: 'kausar_admin@gmail.com', password: 'password', full_name: "Kausar Miyan")
-    admin_3 = User.create!(email: 'kondhwa_budhrukadmin@gmai.com', password: 'password', full_name: "Baba Budhruk")
 
     puts ".........Inserting Masjids .........."
     tooba = Mosque.create!(name: "tooba Masjid", address: "Parge Nagar", area_id: pg.id, user_id: admin_1.id, status: :approved)
