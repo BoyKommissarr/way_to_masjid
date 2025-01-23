@@ -1,4 +1,4 @@
-<h1>All Masjids</h1>
+<h1>All Pending Mosques</h1>
 <table class="table table-light table-bordered" >
   <thead>
     <tr>
@@ -6,20 +6,16 @@
       <th>Name</th>
       <th>Address</th> 
       <th>Status</th>
-      <th colspan="2">Manage</th>
+      <th colspan="2" style = "text-align:center">Manage</th>
     </tr>
   </thead>
   <tbody>
-    <%@mosques.each_with_index do |mosque, index|%>
+    <%@pending_mosques.each_with_index do |mosque, index|%>
       <tr>
         <td><%=index+1%></td>
         <td><%=mosque.name%></td>
         <td><%=mosque.address%></td>
-        <%if mosque.status == 'approved'%>
-          <td style = "color:green;"><%=mosque.status.capitalize%></td>
-        <%else%>
-          <td style = "color:red;"><%=mosque.status.capitalize%></td>
-        <%end%>
+        <td style = "color:red"><%=mosque.status.capitalize%></td>
         <td><%= link_to "Approve", ""  %></td>
         <td><%= link_to "Reject", "" %> </td>
       </tr>
