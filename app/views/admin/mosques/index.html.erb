@@ -1,4 +1,4 @@
-<h1>All Masjids</h1>
+<h1><%= @type.humanize %> Masjids</h1>
 <table class="table table-light table-bordered" >
   <thead>
     <tr>
@@ -12,10 +12,14 @@
     <%@mosques.each_with_index do |mosque, index|%>
       <tr>
         <td><%=index+1%></td>
-        <td><%=mosque.name%></td>
+        <td><%= link_to mosque.name, mosque_path(mosque) %></td>
         <td><%=mosque.address%></td>
-        <td><%= link_to "Approve", ""  %></td>
-        <td><%= link_to "Reject", "" %> </td>
+        <%if mosque.approved? %>
+          <td colspan="2"><%= link_to "Deactivate", ""  %></td>
+        <%elsif mosque.pending? %>
+          <td><%= link_to "Approve", ""  %></td>
+          <td><%= link_to "Reject", "" %> </td>
+        <%end%>
       </tr>
     <%end%>
   </tbody>
