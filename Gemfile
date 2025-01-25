@@ -74,3 +74,5 @@ gem "local_time", "~> 3.0"
 gem "strong_migrations", "~> 2.1"
 
 gem "cancancan", "~> 3.6"
+
+gem "telegram-bot", "~> 0.16.7"

@@ -27,5 +27,5 @@ Rails.application.routes.draw do
     end
   end
 
-  # user routes [mooaz]
+  post "/telegram_webhook", to: "telegram#webhook"
 end
