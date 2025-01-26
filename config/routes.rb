@@ -28,4 +28,9 @@ Rails.application.routes.draw do
   end
 
   post "/telegram_webhook", to: "telegram#webhook"
+  get "/telegram_login", to: "telegram_web#login"
+  # namespace :telegram_api do
+  #   post "/bot/login", to: "bot#login"
+  #   post "/auth/web_login", to: "auth#new"
+  # end
 end

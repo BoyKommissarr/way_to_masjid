@@ -75,4 +75,4 @@ gem "strong_migrations", "~> 2.1"
 
 gem "cancancan", "~> 3.6"
 
-gem "telegram-bot", "~> 0.16.7"
+gem "telegram-bot-ruby", "~> 2.2"
