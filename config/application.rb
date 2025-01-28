@@ -23,5 +23,6 @@ module WayToMasjid
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.hosts = Rails.application.credentials.ngrok_url
   end
 end
