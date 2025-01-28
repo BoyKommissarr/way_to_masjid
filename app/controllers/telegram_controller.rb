@@ -30,7 +30,7 @@ class TelegramController < ApplicationController
         reply_markup: login_button
       )
     else
-      bot.send_message(chat_id: chat_id, text: "I don't understand this command.")
+      bot.api.send_message(chat_id: chat_id, text: "I don't understand this command.")
     end
 
     head :ok
