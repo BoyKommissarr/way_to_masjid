@@ -3,7 +3,7 @@ require "telegram/bot"
 class TelegramController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  WEB_APP_URL = "https://primarily-credible-moray.ngrok-free.app/telegram_login"
+  WEB_APP_URL = "https://#{Rails.application.credentials.ngrok_url}/telegram_login"
 
   def webhook
     bot = Telegram::Bot::Client.new(Rails.application.credentials.telegram_bot_token)
